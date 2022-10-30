@@ -49,8 +49,9 @@ while True:
                         nule = [cx,cy]
                     if id == len(ids)-1:
                         ids = np.append(ids,[[ cx-nule[0], cy-nule[1] ]],axis=0)
-            ids = np.delete(ids,0,0)
-            ids = np.delete(ids,0,0)
+            ids = np.delete(ids, 0, 0)
+            minl = ((ids.item(18, 0) - ids.item(19, 0)) ** 2 + (ids.item(18, 1) - ids.item(19, 1)) ** 2) ** 0.5
+            ids = ids/minl
             np.savetxt(gest+str(i)+'.txt', ids)
             if gest == gestures[-1]:
                 i+=1
