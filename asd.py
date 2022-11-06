@@ -4,12 +4,18 @@ import numpy as np
 
 #define gesture type
 def gesture_type(s):
+    # detect by x
+
     if s.item(5,0)-s.item(17,0) < -30:
         print("reverse",end=" ")
+
     elif s.item(5,0)-s.item(17,0) > 30:
         print("just",end=" ")
     else:
         print("side",end=" ")
+
+    # detect by y
+
     if abs(s.item(5, 1) - s.item(1,1)) > 80:
         print("не в камеру")
     else:
@@ -54,14 +60,14 @@ with mp_hands.Hands(
           for id, lm in enumerate(handLms.landmark):
               # write to ids
               h, w, c = image.shape
-              cx, cy, cz = int(lm.x * w), int(lm.y * h), float(lm.z)
+              cx, cy, cz = int(lm.x * w), int(lm.y * h), int(lm.z*c)
+              print(cz)
               if id == 0:
                   ids = np.array([[0, 0],[cx, cy]])
               else:
                   ids = np.append(ids, [[cx-ids.item(1,0), cy-ids.item(1,1)]], axis=0)
           ids = np.delete(ids, 0, 0)
           gesture_type(ids)
-    # Flip the image horizontally for a selfie-view display.
     cv2.imshow('MediaPipe Hands', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
       break
