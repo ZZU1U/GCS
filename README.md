@@ -7,5 +7,5 @@
  Now you can control your pc or smart home with your gestures <br />
  GSC is in developing now !!! <br />
  For now GSC include: <br />
- asd.py - python app with some code, that doesnt work <br />
- create_data.py - python app to create datasets IN DEVELOPING!!!
+ main.py - main python app <br />
+ create_data.py - python app to create datasets input - name, number of files, number of frames for 1 file <br />
