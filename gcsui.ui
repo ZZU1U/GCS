@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset theme="camera-video"/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionGo_to_site"/>
+    <addaction name="actionText_us"/>
+   </widget>
+   <widget class="QMenu" name="menuUpdates">
+    <property name="title">
+     <string>Updates</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionCheck_updates"/>
+    <addaction name="actionVersion"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionGestures"/>
+    <addaction name="actionSensetivity"/>
+   </widget>
+   <addaction name="menuSettings"/>
+   <addaction name="menuUpdates"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionChechk_updates">
+   <property name="text">
+    <string>Chechk updates</string>
+   </property>
+  </action>
+  <action name="actionCheck_updates">
+   <property name="text">
+    <string>Check updates</string>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="text">
+    <string>Version</string>
+   </property>
+  </action>
+  <action name="actionGo_to_site">
+   <property name="text">
+    <string>Go to site</string>
+   </property>
+  </action>
+  <action name="actionText_us">
+   <property name="text">
+    <string>Text us</string>
+   </property>
+  </action>
+  <action name="actionGestures">
+   <property name="text">
+    <string>Gestures</string>
+   </property>
+  </action>
+  <action name="actionSensetivity">
+   <property name="text">
+    <string>Sensetivity</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

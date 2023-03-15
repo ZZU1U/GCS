@@ -31,7 +31,7 @@ idss = np.empty([fps, 20, 2])
 ids = np.empty([20,2])
 
 # Main cycle
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
