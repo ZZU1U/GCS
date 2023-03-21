@@ -3,6 +3,7 @@ import mediapipe as mp
 import os
 import numpy as np
 from tensorflow import keras
+import pyautogui as pg
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -14,7 +15,7 @@ l = ['hand_l', 'hand_r', 'okay_l', 'okay_r', 'two_in_l', 'two_in_r', 'fist_l', '
 
 ids = np.empty([20, 2])
 
-model = keras.models.load_model('model')
+model = keras.models.load_model('code/model')
 
 fps = 10
 
@@ -57,7 +58,9 @@ with mp_hands.Hands(
                 else:
                     ids[id-1] = (cx-n[0],cy-n[1])
 
-        ids /= abs(max(ids.min(), ids.max(), key=abs))
+        k = abs(max(ids.min(), ids.max(), key=abs))
+
+        ids /= k
 
         idss[:-1] = idss[1:]
         idss[-1] = ids
@@ -68,10 +71,9 @@ with mp_hands.Hands(
           else:
             fps = 10
             gest = model.predict(idss.reshape(1,40,20,2), verbose=0)
-            print(l[np.argmax(gest)], np.max(gest))
+            if 'hand' in l[np.argmax(gest)]:
+               pg.moveTo(1920 - (ids[0][0] * k + n[0]) / 1080 * 1920, (ids[0][1] * k + n[1]) / 720 * 1080)
             
-
-    cv2.imshow('GSC', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
       break
 cap.release()

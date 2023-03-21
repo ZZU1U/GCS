@@ -1,0 +1,4 @@
+mediapipe==0.9.1.0
+PyQt5==5.15.6
+tensorflow==2.12.0rc1
+numpy==1.23.5

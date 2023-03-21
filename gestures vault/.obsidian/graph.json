@@ -2,43 +2,50 @@
   "collapse-filter": true,
   "search": "",
   "showTags": true,
-  "showAttachments": false,
-  "hideUnresolved": false,
+  "showAttachments": true,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "Ready",
+      "query": "Готово",
       "color": {
         "a": 1,
         "rgb": 314408
       }
     },
     {
-      "query": "In process",
+      "query": "Разрабатывается",
       "color": {
         "a": 1,
         "rgb": 12160828
       }
     },
     {
-      "query": "Not in develop",
+      "query": "Сломано",
       "color": {
         "a": 1,
         "rgb": 8787992
       }
+    },
+    {
+      "query": "База",
+      "color": {
+        "a": 1,
+        "rgb": 8752639
+      }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
   "textFadeMultiplier": 0,
   "nodeSizeMultiplier": 1,
   "lineSizeMultiplier": 1,
   "collapse-forces": false,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "centerStrength": 0.630208333333333,
+  "repelStrength": 14.4791666666667,
   "linkStrength": 1,
-  "linkDistance": 329,
+  "linkDistance": 199,
   "scale": 0.8653393478903834,
   "close": true
 }
