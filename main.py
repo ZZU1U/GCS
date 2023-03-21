@@ -10,7 +10,7 @@ mp_hands = mp.solutions.hands
 
 idss = np.empty([40, 20, 2])
 
-l = ['hand_l', 'hand_r', 'okay_l', 'okay_r', 'two_on_l', 'two_on_r', 'fist_l', 'fist_r']
+l = ['hand_l', 'hand_r', 'okay_l', 'okay_r', 'two_in_l', 'two_in_r', 'fist_l', 'fist_r', 'two_on_l', 'two_on_r', 'quest_l', 'quest_r']
 
 ids = np.empty([20, 2])
 
@@ -19,7 +19,7 @@ model = keras.models.load_model('model')
 fps = 10
 
 # Main cycle
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
