@@ -87,7 +87,6 @@ with mp_hands.Hands(
 
       if i == col:
             break
-    cv2.imshow('MediaPipe Hands', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
       break
 cap.release()

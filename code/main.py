@@ -3,7 +3,9 @@ import mediapipe as mp
 import os
 import numpy as np
 from tensorflow import keras
-import pyautogui as pg
+import turtle as tt
+
+# Тестова проверка распознавания жестов СУЖ
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -66,14 +68,11 @@ with mp_hands.Hands(
         idss[-1] = ids
 
         if not np.array_equal(idss[0], np.zeros([20, 2])):
-          if fps != 0:
-            fps -= 1
-          else:
-            fps = 10
-            gest = model.predict(idss.reshape(1,40,20,2), verbose=0)
-            if 'hand' in l[np.argmax(gest)]:
-               pg.moveTo(1920 - (ids[0][0] * k + n[0]) / 1080 * 1920, (ids[0][1] * k + n[1]) / 720 * 1080)
+          gest = model.predict(idss.reshape(1,40,20,2), verbose=0)
+          print(l[np.argmax(gest)], np.max(gest))
+          
             
+        cv2.imshow('GSC', cv2.flip(image, 1))
     if cv2.waitKey(5) & 0xFF == 27:
       break
 cap.release()
